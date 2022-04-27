@@ -2,53 +2,53 @@ package personal;
 
 public class Mitarbeiter {
 
-    static int allgemeines_limit = 20;
+    protected static int allgemeines_limit = 20;
     protected Vorgesetzter chef;
-    protected String name;
+    private String name;
 
     public Mitarbeiter(String name){
         this.name = name;
     }
 
-    public static void setzeAllgemeinesLimit(int all_limit){
+    protected static void setzeAllgemeinesLimit(int all_limit){
         allgemeines_limit = all_limit;
     }
 
-    public void setzeVorgesetzten(Vorgesetzter chef){
+    protected void setzeVorgesetzten(Vorgesetzter chef){
         this.chef = chef;
     }
 
-    public boolean darfBestellen(int wert){
+    protected boolean darfBestellen(int wert){
         return wert <= allgemeines_limit;
     }
 
-    public String gibInfo(){
+    protected final String gibInfo(){
         return "Ich bin " + this.gibRang() + ", Name " + this.gibName() +
                 "." + this.gibVorgesetzter() + " Mein Bestelllimit ist " +
                 this.gibLimit() + " EUR.";
     }
 
-    public int gibLimit() {
+    protected int gibLimit() {
         return allgemeines_limit;
     }
 
-    public String gibVorgesetzter() {
+    protected String gibVorgesetzter() {
         return this.chef == null
                 ? ""
                 : " Mein Vorgesetzter ist " + chef.gibName() + ".";
     }
 
-    public String gibName() {
+    protected String gibName() {
         return name;
     }
 
-    public String gibRang() {
+    protected String gibRang() {
         return this.chef == null
                 ? "freier Mitarbeiter"
                 : "Mitarbeiter";
     }
 
-    public String gibHierarchie(){
+    protected final String gibHierarchie(){
         String hierarchie = this.gibRang() + " " + this.gibName();
         Vorgesetzter k = this.chef;
 

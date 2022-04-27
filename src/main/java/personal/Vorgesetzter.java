@@ -22,12 +22,12 @@ public class Vorgesetzter extends Mitarbeiter{
     }
 
     @Override
-    public String gibRang() {
+    protected String gibRang() {
         return "Vorgesetzter";
     }
 
 
-    public int gibLimit() {
+    protected int gibLimit() {
         return this.limit < 0
                 ? allgemeines_limit
                 : this.limit;
