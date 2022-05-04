@@ -30,8 +30,12 @@ public class StringTest {
 
     @Test
     @DisplayName("Leeren String hervorholen")
-    void substringTest3(){
+    void substringTest3_1(){
         assertEquals("", s.substring(10), "Funzt net!");
+    }
+    @Test
+    @DisplayName("Leeren String hervorholen")
+    void substringTest3_2(){
         assertEquals("", s.substring(5,5), "Funzt net!");
     }
 
