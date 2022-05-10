@@ -1,4 +1,4 @@
-package ausdruck;
+package ausdruck.parser;
 
 public class Variable extends Ausdruck{
 

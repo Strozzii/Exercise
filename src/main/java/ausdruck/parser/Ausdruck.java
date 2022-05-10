@@ -1,4 +1,4 @@
-package ausdruck;
+package ausdruck.parser;
 
 public abstract class Ausdruck {
 

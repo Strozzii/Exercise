@@ -1,5 +1,8 @@
 package ausdruck;
 
+import ausdruck.parser.Konstante;
+import ausdruck.parser.Operatorausdruck;
+import ausdruck.parser.Variable;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;

@@ -1,5 +1,6 @@
 package ausdruck;
 
+import ausdruck.parser.Konstante;
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -14,7 +15,7 @@ public class KonstanteTest {
     void testSomeMethod1() {
         Konstante test = new Konstante(50);
         Konstante test1 = test;
-        assertEquals(test, test1);
+        assertEquals(test1, test);
     }
     @Test
     void testSomeMethod2() {
