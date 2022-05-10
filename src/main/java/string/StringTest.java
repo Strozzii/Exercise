@@ -48,6 +48,7 @@ public class StringTest {
     @Test
     @DisplayName("AssertSame nutzen")
     void substringTest5(){
+        assertSame(s.substring(0,10), s.substring(0));
 
     }
 
