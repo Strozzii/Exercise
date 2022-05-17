@@ -12,28 +12,23 @@ public class ParserTest {
 
     @BeforeEach
     void setUp() {
-        a1 = new Operatorausdruck(new Konstante(50), '+', new Konstante(32));
+        a1 = new Operatorausdruck(new Konstante(69), '+', new Konstante(42));
         a2 = new Operatorausdruck(new Variable("x"), '/', new Variable("y"));
         a3 = new Operatorausdruck(a1, '*', a2);
     }
 
     @Test
     void testParse1() {
-        assertEquals(a1, Parser.parse("50 + 32"));
+        assertEquals(a1, Parser.parse("69 + 42"));
     }
 
     @Test
     void testParse2() {
-        assertEquals(a3, Parser.parse("(50 + 32) * (x / y)"));
+        assertFalse(a3.equals(Parser.parse("(69 + 42) * (x / y)")));
     }
 
     @Test
     void testParse3() {
-        assertFalse(a3.equals(Parser.parse("(50 + 32) * (x / y)")));
-    }
-
-    @Test
-    void testParse4() {
         assertFalse(a2.equals(Parser.parse("(x /) y)")));
     }
 
